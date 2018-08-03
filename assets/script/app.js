@@ -1,4 +1,4 @@
-var winningPoint = 30;
+var winningPoint = 20;
 var score = [0,0];
 var turn = 0;
 var singleScore = 0;
@@ -16,6 +16,9 @@ var currentScore0 = document.querySelector("#current-0");
 var currentScore1 = document.querySelector("#current-1");
 var playerZeroPanel = document.querySelector(".player-0-panel");
 var playerOnePanel = document.querySelector(".player-1-panel");
+
+var settingModel = document.querySelector(".model");
+var modelWall = document.querySelector((".model-wall"));
 
 var viewData = {
     "score-0-player" : document.querySelector("#score-0"),
@@ -91,3 +94,18 @@ function toggleTurn() {
 		playerOnePanel.className = "player-1-panel";
 	}
 }
+
+document.querySelector("#setting-done-btn").addEventListener('click',function () {
+    var data = document.getElementById("select").value;
+    if (confirm("Game will be reset with this setting. Press ok to continue")) {
+        winningPoint = data;
+        modelWall.classList.remove("show-model");
+    }else {
+        modelWall.classList.remove("show-model");
+    }
+});
+
+document.querySelector(".setting").addEventListener('click',function () {
+    modelWall.classList.add("show-model");
+    //settingModel.classList.add("show-model  ");
+});

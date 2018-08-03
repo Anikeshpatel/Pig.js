@@ -152,11 +152,27 @@ i {
 .winner { background-color: #f7f7f7; }
 .winner .player-name { font-weight: 300; color: #05c9f9; }
 
+.setting {
+    position: absolute;
+    width: 15%;
+    top: 80px;
+    fill: #05c9f9;
+}
+
+.setting svg {
+    width: 15%;
+    top: 5px;
+    position: relative;
+}
+
 .model-wall {
     width: 100%;
     height: 100vh;
     position: relative;
     background: rgba(0,0,0,.5);
+    display: none;
+    transition: all 2s ease-in-out;
+    opacity: 0;
 }
 .model {
     width: 500px;
@@ -168,4 +184,42 @@ i {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+}
+.show-model {
+    display: block;
+    opacity: 1;
+}
+.model-winnig-view {
+    display: flex;
+    align-content: space-between;
+    position: relative;
+    top: 20%;
+    left: 10%;
+    width: 100%;
+}
+.model-winnig-view label {
+    margin-right: 20%;
+    font-size: 20px;
+    font-weight: 300;
+}
+.model-winnig-view select {
+    font-size: 20px;
+    width: 100px;
+    background-color: #05c9f9;
+    color: #fff;
+    stroke: none;
+    border: none;
+}
+
+#setting-done-btn {
+    background-color: #05c9f9;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    bottom: 10px;
+    border-radius: 10px;
+    color: #fff;
+}
+#setting-done-btn:hover {
+    transform: translateX(-50%) skewX(10deg);
 }
